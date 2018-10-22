@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
+console.log("Going for first Ajax Request--")
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,buildAndShowHomeHTML,
    true); // Explicitely setting the flag to get JSON from server processed into an object literal
@@ -91,7 +92,7 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-
+    console.log("executing build and show HTML")
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
