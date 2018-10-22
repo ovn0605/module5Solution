@@ -94,7 +94,8 @@ $ajaxUtils.sendGetRequest(
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
     console.log("executing build and show HTML")
-    console.log("value of categories:" + categories)
+    console.log("value of categories:")
+    console.log(categories)
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl,
