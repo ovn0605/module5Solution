@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
+console.log("Going for first load")
 showLoading("#main-content");
 console.log("Going for first Ajax Request--")
 $ajaxUtils.sendGetRequest(
