@@ -149,8 +149,7 @@ function chooseRandomCategory (categories) {
   console.log("returning value:" + categories[randomArrayIndex].name)
   console.log("Hope the name was right")
   // return category object with that randomArrayIndex
-  return categories[randomArrayIndex];
-  
+  return categories[randomArrayIndex];  
 }
 
 
