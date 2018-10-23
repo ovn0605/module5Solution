@@ -80,14 +80,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-console.log("Going for first load")
-
 showLoading("#main-content");
-
-console.log("Going for first Ajax Request--")
 $ajaxUtils.sendGetRequest(
-  allCategoriesUrl,buildAndShowHomeHTML,
-   true); // Explicitely setting the flag to get JSON from server processed into an object literal
+  allCategoriesUrl,
+  [...], // ***** <---- TODO: STEP 1: Substitute [...] ******
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
 });
 // *** finish **
 
@@ -95,9 +92,6 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-    console.log("executing build and show HTML")
-    console.log("value of categories:")
-    console.log(categories)
 
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
@@ -108,9 +102,6 @@ function buildAndShowHomeHTML (categories) {
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
-      var randomCategory=chooseRandomCategory(categories);    
-       console.log("Value obtained in handler function:"+ randomCategory.name)  
-
 
 
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
@@ -126,18 +117,11 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
 
-      console.log("Before Insert Property")
-
-      insertProperty(homeHtmlUrl,"randomCategoryShortName",randomCategory.short_name);
-
-      console.log("After Insert Property")
-      
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-      insertHtml("#main-content",homeHtmlUrl)
 
     },
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
@@ -146,14 +130,11 @@ function buildAndShowHomeHTML (categories) {
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
-  console.log("Executing inside chooseRandomCategory")
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-  console.log("value of randomArrayIndex:" + randomArrayIndex)
-  console.log("returning value:" + categories[randomArrayIndex].name)
-  console.log("Hope the name was right")
+
   // return category object with that randomArrayIndex
-  return categories[randomArrayIndex];  
+  return categories[randomArrayIndex];
 }
 
 
