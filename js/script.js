@@ -126,6 +126,7 @@ function buildAndShowHomeHTML (categories) {
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
+      console.log("HTML is: "+homeHtml)
       insertHtml("#main-content",homeHtml)
 
     },
@@ -135,12 +136,9 @@ function buildAndShowHomeHTML (categories) {
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
-  console.log("Executing inside chooseRandomCategory")
-  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+    // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-  console.log("value of randomArrayIndex:" + randomArrayIndex)
-  console.log("returning value:" + categories[randomArrayIndex].name)
-  console.log("Hope the name was right")
+  
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];  
 }
