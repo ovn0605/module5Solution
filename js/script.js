@@ -122,7 +122,7 @@ function buildAndShowHomeHTML (categories) {
        console.log("The category is:" +randomCategory)
 
 
-      insertProperty(homeHtmlUrl,"randomCategoryShortName",randomCategory.short_name);
+      insertProperty(homeHtml,"randomCategoryShortName",randomCategory.short_name);
 
      
 
