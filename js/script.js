@@ -80,11 +80,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-console.log("Going for first load")
+
 
 showLoading("#main-content");
 
-console.log("Going for first Ajax Request--")
 $ajaxUtils.sendGetRequest(
   allCategoriesUrl,buildAndShowHomeHTML,
    true); // Explicitely setting the flag to get JSON from server processed into an object literal
@@ -95,9 +94,7 @@ $ajaxUtils.sendGetRequest(
 // Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
-    console.log("executing build and show HTML")
-    console.log("value of categories:")
-    console.log(categories)
+    
 
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
@@ -109,10 +106,7 @@ function buildAndShowHomeHTML (categories) {
       // variable's name implies it expects.
       // var chosenCategoryShortName = ....
       var randomCategory=chooseRandomCategory(categories);    
-       console.log("Value obtained in handler function:"+ randomCategory.name)  
-
-
-
+       
       // TODO: STEP 3: Substitute {{randomCategoryShortName}} in the home html snippet with the
       // chosen category from STEP 2. Use existing insertProperty function for that purpose.
       // Look through this code for an example of how to do use the insertProperty function.
@@ -126,19 +120,12 @@ function buildAndShowHomeHTML (categories) {
       //
       // var homeHtmlToInsertIntoMainPage = ....
 
-      console.log("Before Insert Property")
-
       insertProperty(homeHtmlUrl,"randomCategoryShortName",randomCategory.short_name);
-
-      console.log("After Insert Property")
-      console.log("Home Html Url is: " + homeHtmlUrl)
-       console.log("Home Html is: " + homeHtml)
 
       // TODO: STEP 4: Insert the the produced HTML in STEP 3 into the main page
       // Use the existing insertHtml function for that purpose. Look through this code for an example
       // of how to do that.
       // ....
-      console.log("Going to insert Main content")
       insertHtml("#main-content",homeHtml)
 
     },
