@@ -95,7 +95,7 @@ $ajaxUtils.sendGetRequest(
 function buildAndShowHomeHTML (categories) {
     console.log("executing build and show HTML")
     console.log("value of categories:")
-    //console.log(categories)
+    console.log(categories)
 
   // Load home snippet page
   $ajaxUtils.sendGetRequest(
@@ -125,6 +125,7 @@ function buildAndShowHomeHTML (categories) {
       // it into the home html snippet.
       //
       // var homeHtmlToInsertIntoMainPage = ....
+
       insertProperty(homeHtmlUrl,"randomCategoryShortName",randomCategory);
 
 
@@ -144,7 +145,8 @@ function chooseRandomCategory (categories) {
   console.log("Executing inside chooseRandomCategory")
   // Choose a random index into the array (from 0 inclusively until array length (exclusively))
   var randomArrayIndex = Math.floor(Math.random() * categories.length);
-
+  console.log("value of randomArrayIndex:" + randomArrayIndex)
+  console.log("returning value:" + categories[randomArrayIndex])
   // return category object with that randomArrayIndex
   return categories[randomArrayIndex];
 }
