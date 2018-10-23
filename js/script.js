@@ -128,7 +128,9 @@ function buildAndShowHomeHTML (categories) {
       // of how to do that.
       // ....
       console.log("Before insert HTML is: "+homeHtml)
+
       insertHtml("#main-content",homeHtml)
+      
       console.log("After insert HTML is: "+homeHtml)
 
     },
